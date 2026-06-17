@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>People's Party Express</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Fredoka',sans-serif;
+    background:linear-gradient(135deg,#ff006e,#ffbe0b,#3a86ff);
+    min-height:100vh;
+    color:#222;
+}
+
+header{
+    text-align:center;
+    padding:80px 20px;
+    color:white;
+}
+
+header h1{
+    font-size:4rem;
+    margin-bottom:10px;
+    text-shadow:2px 2px 10px rgba(0,0,0,.2);
+}
+
+.tagline{
+    font-size:1.4rem;
+    margin-bottom:25px;
+}
+
+.btn{
+    display:inline-block;
+    background:white;
+    color:#ff006e;
+    padding:14px 28px;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:700;
+    transition:0.3s;
+}
+
+.btn:hover{
+    transform:scale(1.05);
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+section{
+    background:white;
+    margin:25px 0;
+    padding:40px;
+    border-radius:25px;
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+
+h2{
+    color:#ff006e;
+    margin-bottom:20px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:linear-gradient(135deg,#ffd166,#06d6a0);
+    padding:25px;
+    border-radius:20px;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px) rotate(-2deg);
+}
+
+.badge{
+    display:inline-block;
+    background:#ff006e;
+    color:white;
+    padding:6px 14px;
+    border-radius:20px;
+    margin-bottom:10px;
+    font-size:0.9rem;
+}
+
+footer{
+    text-align:center;
+    color:white;
+    padding:40px 20px;
+}
+
+.contact{
+    text-align:center;
+}
+
+.contact p{
+    margin:10px 0;
+}
+
+.hero-icons{
+    font-size:2rem;
+    margin-bottom:20px;
+}
+
+@media(max-width:768px){
+    header h1{
+        font-size:2.8rem;
+    }
+
+    section{
+        padding:25px;
+    }
+}
+</style>
+</head>
+<body>
+
+<header>
+    <div class="hero-icons">🎉 🍾 🥳 🎊</div>
+    <h1>People's Party Express</h1>
+    <p class="tagline">Bringing the Party to the People!</p>
+    <a href="#packs" class="btn">View Party Packs</a>
+</header>
+
+<div class="container">
+
+<section>
+    <h2>🥳 About Us</h2>
+    <p>
+        People's Party Express is your one-stop destination for party beverages,
+        celebration packs, and event essentials. Whether you're hosting a birthday,
+        braai, wedding, or special occasion, we've got everything you need to keep
+        the good times flowing.
+    </p>
+</section>
+
+<section>
+    <h2>🍾 Featured Categories</h2>
+
+    <div class="cards">
+        <div class="card">
+            <h3>🥃 Whisky</h3>
+            <p>Premium local and international brands.</p>
+        </div>
+
+        <div class="card">
+            <h3>🍸 Vodka</h3>
+            <p>Perfect for cocktails and celebrations.</p>
+        </div>
+
+        <div class="card">
+            <h3>🍹 Gin</h3>
+            <p>Popular gin selections and mixers.</p>
+        </div>
+
+        <div class="card">
+            <h3>🍺 Beer & Cider</h3>
+            <p>Party favourites and braai essentials.</p>
+        </div>
+
+        <div class="card">
+            <h3>🍷 Wine</h3>
+            <p>Red, white, rosé and sparkling options.</p>
+        </div>
+
+        <div class="card">
+            <h3>🧊 Mixers & Ice</h3>
+            <p>Everything you need for the perfect party.</p>
+        </div>
+    </div>
+</section>
+
+<section id="packs">
+    <h2>🎊 Party Packs</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <span class="badge">Popular</span>
+            <h3>Starter Pack</h3>
+            <p>Perfect for small gatherings and celebrations.</p>
+        </div>
+
+        <div class="card">
+            <span class="badge">Braai Time</span>
+            <h3>Braai & Chill Pack</h3>
+            <p>Beer, refreshments and party essentials.</p>
+        </div>
+
+        <div class="card">
+            <span class="badge">Birthday</span>
+            <h3>Celebration Pack</h3>
+            <p>Premium drinks for memorable occasions.</p>
+        </div>
+
+        <div class="card">
+            <span class="badge">Ultimate</span>
+            <h3>House Party Pack</h3>
+            <p>The complete package for larger events.</p>
+        </div>
+
+    </div>
+</section>
+
+<section class="contact">
+    <h2>📞 Contact Us</h2>
+
+    <p>📍 Mogale City, Gauteng</p>
+    <p>📧 info@peoplespartyexpress.co.za</p>
+    <p>📱 +27 XX XXX XXXX</p>
+</section>
+
+</div>
+
+<footer>
+    <p>© 2025 People's Party Express</p>
+    <p>Drink Responsibly • No sales to persons under 18</p>
+</footer>
+
+</body>
+</html>
