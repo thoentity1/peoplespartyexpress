@@ -1,35 +1,89 @@
+.party-section{
+    background:#fff;
+    padding:60px;
+    border-radius:40px;
+    margin:40px auto;
+}
+
+.section-title{
+    color:#ff0a78;
+    font-size:2.3rem;
+    margin-bottom:40px;
+}
+
+.pack-grid{
+    display:grid;
+    grid-template-columns:
+        repeat(auto-fit,minmax(320px,1fr));
+    gap:25px;
+}
+
+.pack-card{
+    background:linear-gradient(
+        135deg,
+        #e6c95d,
+        #57d188,
+        #20d6b8
+    );
+    padding:30px;
+    border-radius:30px;
+    transition:.3s;
+}
+
+.pack-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+}
+
+.pack-badge{
+    display:inline-block;
+    background:#ff006e;
+    color:white;
+    padding:10px 20px;
+    border-radius:25px;
+    margin-bottom:20px;
+}
+
+.pack-card h3{
+    margin-bottom:15px;
+}
+
 .pack-items{
     list-style:none;
-    margin:20px 0;
     padding:0;
+    margin:20px 0;
 }
 
 .pack-items li{
-    padding:6px 0;
-    font-size:1rem;
+    margin:8px 0;
 }
 
 .pack-price{
     font-size:2rem;
-    font-weight:700;
+    font-weight:bold;
     margin:20px 0;
-    color:#111;
 }
 
-.pack-btn{
-    width:100%;
-    padding:15px;
+.pack-actions{
+    display:flex;
+    gap:10px;
+}
+
+.view-btn,
+.cart-btn{
+    flex:1;
     border:none;
+    padding:14px;
     border-radius:15px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.view-btn{
+    background:white;
+}
+
+.cart-btn{
     background:#ff006e;
     color:white;
-    font-size:1rem;
-    font-weight:700;
-    cursor:pointer;
-    transition:.3s;
-}
-
-.pack-btn:hover{
-    background:#e00060;
-    transform:translateY(-2px);
 }
