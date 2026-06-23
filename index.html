@@ -1,249 +1,299 @@
-<!-- PARTY PACKS SECTION -->
-<section id="packs" class="party-section">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>People's Party Express</title>
 
-    <h2 class="section-title">🎊 Party Packs</h2>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+}
+
+header{
+    background:linear-gradient(135deg,#7c3aed,#ec4899);
+    padding:80px 20px;
+    text-align:center;
+}
+
+header h1{
+    font-size:3rem;
+    margin-bottom:15px;
+}
+
+header p{
+    font-size:1.2rem;
+    margin-bottom:30px;
+}
+
+.btn{
+    display:inline-block;
+    padding:12px 25px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:600;
+    margin:5px;
+    transition:.3s;
+}
+
+.btn-primary{
+    background:white;
+    color:#7c3aed;
+}
+
+.btn-primary:hover{
+    transform:translateY(-3px);
+}
+
+.btn-secondary{
+    background:#22c55e;
+    color:white;
+}
+
+.section{
+    padding:70px 20px;
+    max-width:1200px;
+    margin:auto;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+    font-size:2rem;
+}
+
+.pack-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:#1e293b;
+    border-radius:20px;
+    overflow:hidden;
+    transition:.3s;
+    box-shadow:0 5px 15px rgba(0,0,0,.3);
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:20px;
+}
+
+.card h3{
+    margin-bottom:10px;
+}
+
+.price{
+    color:#22c55e;
+    font-size:1.5rem;
+    font-weight:bold;
+    margin:15px 0;
+}
+
+.features{
+    list-style:none;
+    margin-bottom:20px;
+}
+
+.features li{
+    padding:5px 0;
+}
+
+.order-btn{
+    display:block;
+    text-align:center;
+    background:#ec4899;
+    color:white;
+    padding:12px;
+    border-radius:10px;
+    text-decoration:none;
+}
+
+.order-btn:hover{
+    background:#db2777;
+}
+
+.review-section{
+    background:#1e293b;
+}
+
+.review-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.review{
+    background:#334155;
+    padding:25px;
+    border-radius:15px;
+}
+
+.contact{
+    text-align:center;
+}
+
+.contact p{
+    margin:10px 0;
+}
+
+footer{
+    background:#020617;
+    text-align:center;
+    padding:25px;
+}
+
+@media(max-width:768px){
+    header h1{
+        font-size:2rem;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>🎉 People's Party Express</h1>
+    <p>Everything You Need For The Perfect Party</p>
+
+    <a href="#packs" class="btn btn-primary">Browse Party Packs</a>
+    <a href="https://wa.me/27700000000" class="btn btn-secondary">WhatsApp Us</a>
+</header>
+
+<section class="section" id="packs">
+
+    <h2 class="section-title">🔥 Popular Party Packs</h2>
 
     <div class="pack-grid">
 
-        <!-- STARTER PACK -->
-        <div class="pack-card" data-id="starterpack.html">
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1f" alt="">
+            <div class="card-content">
+                <h3>🎉 Starter Pack</h3>
 
-            <span class="pack-badge">Popular</span>
+                <ul class="features">
+                    <li>🥃 1 x Whisky (750ml)</li>
+                    <li>🍸 1 x Vodka (750ml)</li>
+                    <li>🥤 12 Mixers</li>
+                    <li>🧊 1 Bag Ice</li>
+                    <li>🎊 Party Cups Included</li>
+                </ul>
 
-            <h3>🥳 Starter Pack</h3>
+                <div class="price">R799</div>
 
-            <ul class="pack-items">
-                <li>🥃 1 x Whisky (750ml)</li>
-                <li>🍸 1 x Vodka (750ml)</li>
-                <li>🥤 12 x Mixers</li>
-                <li>🧊 1 x Bag Ice</li>
-                <li>🎉 Party Cups Included</li>
-            </ul>
-
-            <div class="pack-price">R799</div>
-
-            <div class="pack-actions">
-                <button class="view-btn"
-                    onclick="viewProduct('starterpack.html')">
-                    View Details
-                </button>
-
-                <button class="cart-btn"
-                    onclick="addToCart(
-                    'Starter Pack',
-                    799,
-                    'starterpack'
-                    )">
-                    Add to Cart
-                </button>
+                <a href="#" class="order-btn">View Package</a>
             </div>
-
         </div>
 
-        <!-- BRAAI & CHILL -->
-        <div class="pack-card" data-id="braai-pack">
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1529193591184-b1d58069ecdd" alt="">
+            <div class="card-content">
+                <h3>🔥 Braai & Chill Pack</h3>
 
-            <span class="pack-badge">Braai Time</span>
+                <ul class="features">
+                    <li>🍺 24 Beers</li>
+                    <li>🍏 12 Ciders</li>
+                    <li>🥤 12 Soft Drinks</li>
+                    <li>🧊 2 Bags Ice</li>
+                    <li>🎉 Disposable Cups</li>
+                </ul>
 
-            <h3>🔥 Braai & Chill Pack</h3>
+                <div class="price">R999</div>
 
-            <ul class="pack-items">
-                <li>🍺 24 x Beers</li>
-                <li>🍏 12 x Ciders</li>
-                <li>🥤 12 x Soft Drinks</li>
-                <li>🧊 2 x Bags Ice</li>
-                <li>🎉 Disposable Cups</li>
-            </ul>
-
-            <div class="pack-price">R999</div>
-
-            <div class="pack-actions">
-                <button class="view-btn"
-                    onclick="viewProduct('braai-pack')">
-                    View Details
-                </button>
-
-                <button class="cart-btn"
-                    onclick="addToCart(
-                    'Braai & Chill Pack',
-                    999,
-                    'braai-pack'
-                    )">
-                    Add to Cart
-                </button>
+                <a href="#" class="order-btn">View Package</a>
             </div>
-
         </div>
 
-        <!-- CELEBRATION -->
-        <div class="pack-card" data-id="celebration-pack">
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3" alt="">
+            <div class="card-content">
+                <h3>🎂 Celebration Pack</h3>
 
-            <span class="pack-badge">Birthday</span>
+                <ul class="features">
+                    <li>🥃 Premium Whisky</li>
+                    <li>🍾 Sparkling Wine</li>
+                    <li>🥤 Soft Drinks</li>
+                    <li>🎈 Birthday Decor</li>
+                    <li>🎉 Party Accessories</li>
+                </ul>
 
-            <h3>🎂 Celebration Pack</h3>
+                <div class="price">R1499</div>
 
-            <ul class="pack-items">
-                <li>🥃 1 x Premium Whisky</li>
-                <li>🍸 1 x Vodka</li>
-                <li>🍹 1 x Gin</li>
-                <li>🥤 24 x Mixers</li>
-                <li>🧊 2 x Bags Ice</li>
-            </ul>
-
-            <div class="pack-price">R1,499</div>
-
-            <div class="pack-actions">
-                <button class="view-btn"
-                    onclick="viewProduct('celebration-pack')">
-                    View Details
-                </button>
-
-                <button class="cart-btn"
-                    onclick="addToCart(
-                    'Celebration Pack',
-                    1499,
-                    'celebration-pack'
-                    )">
-                    Add to Cart
-                </button>
+                <a href="#" class="order-btn">View Package</a>
             </div>
-
-        </div>
-
-        <!-- HOUSE PARTY -->
-        <div class="pack-card" data-id="house-party-pack">
-
-            <span class="pack-badge">Ultimate</span>
-
-            <h3>🎉 House Party Pack</h3>
-
-            <ul class="pack-items">
-                <li>🥃 2 x Whisky</li>
-                <li>🍸 2 x Vodka</li>
-                <li>🍹 1 x Gin</li>
-                <li>🥤 48 x Mixers</li>
-                <li>🧊 4 x Bags Ice</li>
-            </ul>
-
-            <div class="pack-price">R2,499</div>
-
-            <div class="pack-actions">
-                <button class="view-btn"
-                    onclick="viewProduct('house-party-pack')">
-                    View Details
-                </button>
-
-                <button class="cart-btn"
-                    onclick="addToCart(
-                    'House Party Pack',
-                    2499,
-                    'house-party-pack'
-                    )">
-                    Add to Cart
-                </button>
-            </div>
-
-        </div>
-
-        <!-- VIP PACK -->
-        <div class="pack-card" data-id="vip-pack">
-
-            <span class="pack-badge">VIP</span>
-
-            <h3>👑 VIP Party Pack</h3>
-
-            <ul class="pack-items">
-                <li>🥃 2 x Premium Whisky</li>
-                <li>🍾 1 x Champagne</li>
-                <li>🍸 2 x Vodka</li>
-                <li>🍹 2 x Gin</li>
-                <li>🥤 48 x Mixers</li>
-            </ul>
-
-            <div class="pack-price">R3,999</div>
-
-            <div class="pack-actions">
-                <button class="view-btn"
-                    onclick="viewProduct('vip-pack')">
-                    View Details
-                </button>
-
-                <button class="cart-btn"
-                    onclick="addToCart(
-                    'VIP Party Pack',
-                    3999,
-                    'vip-pack'
-                    )">
-                    Add to Cart
-                </button>
-            </div>
-
-        </div>
-
-        <!-- CORPORATE PACK -->
-        <div class="pack-card" data-id="corporate-pack">
-
-            <span class="pack-badge">Corporate</span>
-
-            <h3>🏢 Corporate Event Pack</h3>
-
-            <ul class="pack-items">
-                <li>🍷 Assorted Wines</li>
-                <li>🍺 Premium Beers</li>
-                <li>🥂 Sparkling Wine</li>
-                <li>🥤 Soft Drinks</li>
-                <li>🧊 Ice Included</li>
-            </ul>
-
-            <div class="pack-price">R5,999</div>
-
-            <div class="pack-actions">
-                <button class="view-btn"
-                    onclick="viewProduct('corporate-pack')">
-                    View Details
-                </button>
-
-                <button class="cart-btn"
-                    onclick="addToCart(
-                    'Corporate Event Pack',
-                    5999,
-                    'corporate-pack'
-                    )">
-                    Add to Cart
-                </button>
-            </div>
-
         </div>
 
     </div>
 
 </section>
 
-<script>
-function addToCart(name, price, id) {
+<section class="section review-section">
 
-    let cart = JSON.parse(
-        localStorage.getItem('ppeCart')
-    ) || [];
+    <h2 class="section-title">⭐ Customer Reviews</h2>
 
-    cart.push({
-        id: id,
-        name: name,
-        price: price,
-        qty: 1
-    });
+    <div class="review-grid">
 
-    localStorage.setItem(
-        'ppeCart',
-        JSON.stringify(cart)
-    );
+        <div class="review">
+            ⭐⭐⭐⭐⭐
+            <p>"Best party service in Sandton. Everything arrived on time!"</p>
+            <strong>- Thabo M.</strong>
+        </div>
 
-    alert(name + ' added to cart!');
-}
+        <div class="review">
+            ⭐⭐⭐⭐⭐
+            <p>"Amazing packages and affordable prices."</p>
+            <strong>- Lerato K.</strong>
+        </div>
 
-function viewProduct(productId){
+        <div class="review">
+            ⭐⭐⭐⭐⭐
+            <p>"Will definitely use People's Party Express again."</p>
+            <strong>- Sipho D.</strong>
+        </div>
 
-    window.location.href =
-        'product.html?id=' + productId;
-}
-</script>
+    </div>
+
+</section>
+
+<section class="section contact">
+
+    <h2 class="section-title">📍 Contact Us</h2>
+
+    <p>📍 Sandton, South Africa</p>
+    <p>📞 +27 83 214 2201</p>
+    <p>📧 info@peoplespartyexpress.co.za</p>
+
+    <a href="https://wa.me/27832142201" class="btn btn-secondary">
+        Order on WhatsApp
+    </a>
+
+</section>
+
+<footer>
+    © 2025 People's Party Express | All Rights Reserved
+</footer>
+
+</body>
+</html>
