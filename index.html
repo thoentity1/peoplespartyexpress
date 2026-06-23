@@ -3,11 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>People's Party Express</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
+
 *{
     margin:0;
     padding:0;
@@ -16,138 +18,159 @@
 }
 
 body{
-    background:#0f172a;
+    background:linear-gradient(135deg,#0f172a,#1e293b);
     color:white;
 }
 
-header{
-    background:linear-gradient(135deg,#7c3aed,#ec4899);
-    padding:80px 20px;
+/* Hero Section */
+
+.hero{
+    min-height:60vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
     text-align:center;
+    padding:60px 20px;
+    background:
+    linear-gradient(
+        rgba(0,0,0,.4),
+        rgba(0,0,0,.4)
+    ),
+    url('https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=1600&q=80');
+    background-size:cover;
+    background-position:center;
 }
 
-header h1{
-    font-size:3rem;
+.hero h1{
+    font-size:4rem;
     margin-bottom:15px;
 }
 
-header p{
+.hero p{
     font-size:1.2rem;
-    margin-bottom:30px;
+    max-width:700px;
 }
 
-.btn{
+.hero-btn{
+    margin-top:25px;
     display:inline-block;
-    padding:12px 25px;
-    border-radius:30px;
-    text-decoration:none;
-    font-weight:600;
-    margin:5px;
-    transition:.3s;
-}
-
-.btn-primary{
-    background:white;
-    color:#7c3aed;
-}
-
-.btn-primary:hover{
-    transform:translateY(-3px);
-}
-
-.btn-secondary{
-    background:#22c55e;
+    background:#ff006e;
     color:white;
+    padding:15px 35px;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:700;
 }
+
+.hero-btn:hover{
+    background:#e00060;
+}
+
+/* Section */
 
 .section{
     padding:70px 20px;
-    max-width:1200px;
-    margin:auto;
 }
 
 .section-title{
     text-align:center;
+    font-size:2.5rem;
     margin-bottom:50px;
-    font-size:2rem;
 }
 
+/* Cards */
+
 .pack-grid{
+    max-width:1300px;
+    margin:auto;
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
     gap:30px;
 }
 
-.card{
-    background:#1e293b;
-    border-radius:20px;
+.party-pack{
+    background:linear-gradient(
+        135deg,
+        #7b2ff7,
+        #f107a3
+    );
+    border-radius:25px;
     overflow:hidden;
-    transition:.3s;
-    box-shadow:0 5px 15px rgba(0,0,0,.3);
+    box-shadow:0 15px 40px rgba(0,0,0,.3);
+    transition:.4s;
 }
 
-.card:hover{
+.party-pack:hover{
     transform:translateY(-10px);
 }
 
-.card img{
+.party-pack img{
     width:100%;
     height:220px;
     object-fit:cover;
 }
 
-.card-content{
-    padding:20px;
+.pack-content{
+    padding:25px;
 }
 
-.card h3{
-    margin-bottom:10px;
+.party-pack h2{
+    margin-bottom:15px;
 }
 
-.price{
-    color:#22c55e;
-    font-size:1.5rem;
-    font-weight:bold;
-    margin:15px 0;
-}
-
-.features{
+.pack-items{
     list-style:none;
-    margin-bottom:20px;
+    margin:20px 0;
 }
 
-.features li{
-    padding:5px 0;
-}
-
-.order-btn{
-    display:block;
-    text-align:center;
-    background:#ec4899;
-    color:white;
-    padding:12px;
+.pack-items li{
+    padding:10px;
+    margin-bottom:8px;
+    background:rgba(255,255,255,.15);
     border-radius:10px;
-    text-decoration:none;
 }
 
-.order-btn:hover{
-    background:#db2777;
+.pack-price{
+    font-size:2rem;
+    font-weight:800;
+    text-align:center;
+    margin:25px 0;
 }
 
-.review-section{
-    background:#1e293b;
+.pack-btn{
+    width:100%;
+    border:none;
+    padding:15px;
+    border-radius:50px;
+    background:#ffbe0b;
+    color:#111;
+    font-size:1rem;
+    font-weight:800;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.pack-btn:hover{
+    transform:scale(1.05);
+}
+
+.reviews{
+    background:#111827;
 }
 
 .review-grid{
+    max-width:1200px;
+    margin:auto;
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
     gap:25px;
 }
 
 .review{
-    background:#334155;
+    background:#1f2937;
     padding:25px;
-    border-radius:15px;
+    border-radius:20px;
 }
 
 .contact{
@@ -158,42 +181,74 @@ header p{
     margin:10px 0;
 }
 
+.whatsapp-btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:15px 30px;
+    background:#25D366;
+    color:white;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:700;
+}
+
 footer{
     background:#020617;
-    text-align:center;
     padding:25px;
+    text-align:center;
 }
 
 @media(max-width:768px){
-    header h1{
-        font-size:2rem;
-    }
+
+.hero h1{
+    font-size:2.5rem;
 }
+
+.hero p{
+    font-size:1rem;
+}
+
+}
+
 </style>
 </head>
 
 <body>
 
-<header>
-    <h1>🎉 People's Party Express</h1>
-    <p>Everything You Need For The Perfect Party</p>
+<section class="hero">
 
-    <a href="#packs" class="btn btn-primary">Browse Party Packs</a>
-    <a href="https://wa.me/27700000000" class="btn btn-secondary">WhatsApp Us</a>
-</header>
+    <h1>🎉 People's Party Express</h1>
+
+    <p>
+        Everything you need for the perfect party.
+        Drinks, braai packs, birthday specials and more.
+    </p>
+
+    <a href="#packs" class="hero-btn">
+        Browse Party Packs
+    </a>
+
+</section>
 
 <section class="section" id="packs">
 
-    <h2 class="section-title">🔥 Popular Party Packs</h2>
+    <h2 class="section-title">
+        🎊 Popular Party Packs
+    </h2>
 
     <div class="pack-grid">
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1f" alt="">
-            <div class="card-content">
-                <h3>🎉 Starter Pack</h3>
+        <!-- Starter Pack -->
 
-                <ul class="features">
+        <div class="party-pack">
+
+            <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1f?auto=format&fit=crop&w=1000&q=80">
+
+            <div class="pack-content">
+
+                <h2>🎉 Starter Pack</h2>
+
+                <ul class="pack-items">
                     <li>🥃 1 x Whisky (750ml)</li>
                     <li>🍸 1 x Vodka (750ml)</li>
                     <li>🥤 12 Mixers</li>
@@ -201,18 +256,29 @@ footer{
                     <li>🎊 Party Cups Included</li>
                 </ul>
 
-                <div class="price">R799</div>
+                <div class="pack-price">
+                    R799
+                </div>
 
-                <a href="#" class="order-btn">View Package</a>
+                <button class="pack-btn">
+                    🛒 Add To Cart
+                </button>
+
             </div>
+
         </div>
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1529193591184-b1d58069ecdd" alt="">
-            <div class="card-content">
-                <h3>🔥 Braai & Chill Pack</h3>
+        <!-- Braai Pack -->
 
-                <ul class="features">
+        <div class="party-pack">
+
+            <img src="https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?auto=format&fit=crop&w=1000&q=80">
+
+            <div class="pack-content">
+
+                <h2>🔥 Braai & Chill Pack</h2>
+
+                <ul class="pack-items">
                     <li>🍺 24 Beers</li>
                     <li>🍏 12 Ciders</li>
                     <li>🥤 12 Soft Drinks</li>
@@ -220,57 +286,76 @@ footer{
                     <li>🎉 Disposable Cups</li>
                 </ul>
 
-                <div class="price">R999</div>
+                <div class="pack-price">
+                    R999
+                </div>
 
-                <a href="#" class="order-btn">View Package</a>
+                <button class="pack-btn">
+                    🛒 Add To Cart
+                </button>
+
             </div>
+
         </div>
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3" alt="">
-            <div class="card-content">
-                <h3>🎂 Celebration Pack</h3>
+        <!-- Birthday Pack -->
 
-                <ul class="features">
+        <div class="party-pack">
+
+            <img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?auto=format&fit=crop&w=1000&q=80">
+
+            <div class="pack-content">
+
+                <h2>🎂 Celebration Pack</h2>
+
+                <ul class="pack-items">
                     <li>🥃 Premium Whisky</li>
                     <li>🍾 Sparkling Wine</li>
                     <li>🥤 Soft Drinks</li>
                     <li>🎈 Birthday Decor</li>
-                    <li>🎉 Party Accessories</li>
+                    <li>🎊 Party Accessories</li>
                 </ul>
 
-                <div class="price">R1499</div>
+                <div class="pack-price">
+                    R1499
+                </div>
 
-                <a href="#" class="order-btn">View Package</a>
+                <button class="pack-btn">
+                    🛒 Add To Cart
+                </button>
+
             </div>
+
         </div>
 
     </div>
 
 </section>
 
-<section class="section review-section">
+<section class="section reviews">
 
-    <h2 class="section-title">⭐ Customer Reviews</h2>
+    <h2 class="section-title">
+        ⭐ Happy Customers
+    </h2>
 
     <div class="review-grid">
 
         <div class="review">
             ⭐⭐⭐⭐⭐
-            <p>"Best party service in Sandton. Everything arrived on time!"</p>
-            <strong>- Thabo M.</strong>
+            <p>Best party service in Gauteng. Fast delivery and great prices.</p>
+            <strong>- Sipho M.</strong>
         </div>
 
         <div class="review">
             ⭐⭐⭐⭐⭐
-            <p>"Amazing packages and affordable prices."</p>
+            <p>Everything arrived on time and the party was a success.</p>
             <strong>- Lerato K.</strong>
         </div>
 
         <div class="review">
             ⭐⭐⭐⭐⭐
-            <p>"Will definitely use People's Party Express again."</p>
-            <strong>- Sipho D.</strong>
+            <p>Excellent service. Highly recommended.</p>
+            <strong>- Thabo D.</strong>
         </div>
 
     </div>
@@ -279,20 +364,25 @@ footer{
 
 <section class="section contact">
 
-    <h2 class="section-title">📍 Contact Us</h2>
+    <h2 class="section-title">
+        📞 Contact Us
+    </h2>
 
     <p>📍 Sandton, South Africa</p>
     <p>📞 +27 83 214 2201</p>
-    <p>📧 info@peoplespartyexpress.co.za</p>
+    <p>📧 thoentity@gmail.com</p>
 
-    <a href="https://wa.me/27832142201" class="btn btn-secondary">
-        Order on WhatsApp
+    <a
+        class="whatsapp-btn"
+        href="https://wa.me/27832142201"
+        target="_blank">
+        💬 Order via WhatsApp
     </a>
 
 </section>
 
 <footer>
-    © 2025 People's Party Express | All Rights Reserved
+    © 2025 People's Party Express | Powered by The Entity Solutions
 </footer>
 
 </body>
