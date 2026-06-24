@@ -1,447 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>People's Party Express</title>
 
-<title>🎉 MyParty</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    body {
+      font-family: Arial, sans-serif;
+      background: #0b132b;
+      color: white;
+    }
 
-<style>
+    .layout {
+      display: flex;
+      min-height: 100vh;
+    }
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
-}
+    /* Sidebar */
+    .sidebar {
+      width: 220px;
+      background: #081024;
+      padding: 20px;
+    }
 
-body{
-    background:#0f172a;
-    color:white;
-}
+    .sidebar h2 {
+      font-size: 18px;
+      margin-bottom: 20px;
+      color: #ff4d6d;
+    }
 
-/* NAVBAR */
+    .sidebar a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      padding: 12px 0;
+      transition: 0.2s;
+    }
 
-.navbar{
-    background:#111827;
-    padding:15px 30px;
-    position:sticky;
-    top:0;
-    z-index:1000;
-}
+    .sidebar a:hover {
+      color: #ff4d6d;
+      padding-left: 5px;
+    }
 
-.nav-links{
-    list-style:none;
-    display:flex;
-    justify-content:center;
-    gap:25px;
-}
+    /* Main */
+    .main {
+      flex: 1;
+    }
 
-.nav-links a{
-    color:white;
-    text-decoration:none;
-    font-weight:600;
-}
+    /* Hero */
+    .hero {
+      height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(90deg, #ff007a, #7b2ff7);
+      padding: 20px;
+    }
 
-.nav-links a:hover{
-    color:#ffbe0b;
-}
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 15px;
+    }
 
-/* HERO */
+    .hero p {
+      font-size: 18px;
+      max-width: 600px;
+      margin-bottom: 25px;
+    }
 
-.hero{
-    background:linear-gradient(135deg,#ff006e,#8338ec);
-    text-align:center;
-    padding:100px 20px;
-}
+    .btn {
+      background: white;
+      color: #ff007a;
+      padding: 12px 24px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
 
-.hero h1{
-    font-size:4rem;
-    margin-bottom:15px;
-}
+    .btn:hover {
+      transform: scale(1.05);
+    }
 
-.hero p{
-    font-size:1.2rem;
-    max-width:700px;
-    margin:auto;
-}
+    /* Responsive */
+    @media (max-width: 768px) {
+      .layout {
+        flex-direction: column;
+      }
 
-.hero-btn{
-    display:inline-block;
-    margin-top:25px;
-    padding:15px 35px;
-    background:white;
-    color:#ff006e;
-    text-decoration:none;
-    border-radius:50px;
-    font-weight:700;
-    margin-right:10px;
-}
-
-.hero-btn:hover{
-    transform:scale(1.05);
-}
-
-/* SECTION */
-
-.section{
-    padding:80px 20px;
-}
-
-.section-title{
-    text-align:center;
-    margin-bottom:50px;
-    font-size:2.5rem;
-}
-
-/* GRID */
-
-.pack-grid{
-    max-width:1300px;
-    margin:auto;
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-    gap:30px;
-}
-
-/* CARDS */
-
-.party-pack{
-    background:linear-gradient(135deg,#7b2ff7,#f107a3);
-    border-radius:25px;
-    overflow:hidden;
-    box-shadow:0 15px 35px rgba(0,0,0,.35);
-    transition:.3s;
-}
-
-.party-pack:hover{
-    transform:translateY(-10px);
-}
-
-.party-pack img{
-    width:100%;
-    height:230px;
-    object-fit:cover;
-}
-
-.pack-content{
-    padding:25px;
-}
-
-.pack-content h2{
-    margin-bottom:15px;
-}
-
-.pack-items{
-    list-style:none;
-    margin:20px 0;
-}
-
-.pack-items li{
-    background:rgba(255,255,255,.15);
-    padding:10px;
-    margin-bottom:8px;
-    border-radius:12px;
-}
-
-.pack-price{
-    text-align:center;
-    font-size:2rem;
-    font-weight:800;
-    margin:25px 0;
-}
-
-.pack-btn{
-    display:block;
-    width:100%;
-    text-align:center;
-    text-decoration:none;
-    background:#ffbe0b;
-    color:#111;
-    padding:15px;
-    border-radius:50px;
-    font-weight:800;
-}
-
-.pack-btn:hover{
-    transform:scale(1.05);
-}
-
-/* REVIEWS */
-
-.reviews{
-    background:#111827;
-}
-
-.review-grid{
-    max-width:1200px;
-    margin:auto;
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:25px;
-}
-
-.review{
-    background:#1f2937;
-    padding:25px;
-    border-radius:20px;
-}
-
-/* CONTACT */
-
-.contact{
-    text-align:center;
-}
-
-.contact p{
-    margin:10px 0;
-}
-
-.whatsapp-btn{
-    display:inline-block;
-    margin-top:20px;
-    padding:15px 30px;
-    background:#25D366;
-    color:white;
-    text-decoration:none;
-    border-radius:50px;
-    font-weight:700;
-}
-
-footer{
-    background:black;
-    text-align:center;
-    padding:20px;
-}
-
-/* MOBILE */
-
-@media(max-width:768px){
-
-.nav-links{
-    flex-wrap:wrap;
-    gap:12px;
-}
-
-.hero h1{
-    font-size:2.5rem;
-}
-
-.hero p{
-    font-size:1rem;
-}
-
-}
-
-</style>
+      .sidebar {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- NAVIGATION -->
-
-<nav class="navbar">
-
-<ul class="nav-links">
-
-<li><a href="#">Home</a></li>
-<li><a href="#packs">Packages</a></li>
-<li><a href="platter.html">🍱 Platters</a></li>
-<li><a href="#reviews">Reviews</a></li>
-<li><a href="#contact">Contact</a></li>
-
-</ul>
-
-</nav>
-
-<!-- HERO -->
-
-<section class="hero">
-
-<h1>🎉 MyParty</h1>
-
-<p>
-Celebrate More. Stress Less.
-Party Packs, Braai Packs, Hubbly Bubbly Hire and More.
-</p>
-
-<a href="#packs" class="hero-btn">
-🔥 Browse Packages
-</a>
-
-<a href="platter.html" class="hero-btn">
-🍱 View Platters
-</a>
-
-</section>
-
-<!-- PACKAGES -->
-
-<section class="section" id="packs">
-
-<h2 class="section-title">
-🎊 Popular Party Packages
-</h2>
-
-<div class="pack-grid">
-
-<div class="party-pack">
-
-<img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1f?auto=format&fit=crop&w=1000&q=80">
-
-<div class="pack-content">
-
-<h2>🥃 Starter Pack</h2>
-
-<ul class="pack-items">
-<li>🥃 Whisky</li>
-<li>🍸 Vodka</li>
-<li>🥤 Mixers</li>
-<li>🧊 Ice Included</li>
-</ul>
-
-<div class="pack-price">R799</div>
-
-<a href="https://wa.me/27832142201" class="pack-btn">
-Order Now
-</a>
-
-</div>
-</div>
-
-<div class="party-pack">
-
-<img src="https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?auto=format&fit=crop&w=1000&q=80">
-
-<div class="pack-content">
-
-<h2>🔥 Braai Pack</h2>
-
-<ul class="pack-items">
-<li>🍺 Beers</li>
-<li>🍏 Ciders</li>
-<li>🥤 Soft Drinks</li>
-<li>🧊 Ice Included</li>
-</ul>
-
-<div class="pack-price">R999</div>
-
-<a href="https://wa.me/27832142201" class="pack-btn">
-Order Now
-</a>
-
-</div>
-</div>
-
-<div class="party-pack">
-
-<img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?auto=format&fit=crop&w=1000&q=80">
-
-<div class="pack-content">
-
-<h2>🎂 Celebration Pack</h2>
-
-<ul class="pack-items">
-<li>🍾 Sparkling Wine</li>
-<li>🥃 Premium Whisky</li>
-<li>🎈 Party Decor</li>
-<li>🎉 Accessories</li>
-</ul>
-
-<div class="pack-price">R1499</div>
-
-<a href="https://wa.me/27832142201" class="pack-btn">
-Order Now
-</a>
-
-</div>
-</div>
-
-<div class="party-pack">
-
-<img src="images/hubbly-bubbly.jpg" alt="Hubbly Bubbly">
-
-<div class="pack-content">
-
-<h2>💨 Premium Hubbly Bubbly Hire</h2>
-
-<ul class="pack-items">
-<li>💨 Premium Hookah Setup</li>
-<li>🔥 Charcoal Included</li>
-<li>🍓 Flavours Available</li>
-<li>🎉 Event Ready</li>
-<li>🚚 Delivery Available</li>
-</ul>
-
-<div class="pack-price">R1500</div>
-
-<a href="https://wa.me/27832142201?text=Hi%20I%20would%20like%20to%20hire%20the%20Hubbly%20Bubbly"
-class="pack-btn">
-Hire Now
-</a>
-
-</div>
-</div>
-
-</div>
-
-</section>
-
-<!-- REVIEWS -->
-
-<section class="section reviews" id="reviews">
-
-<h2 class="section-title">
-⭐ Customer Reviews
-</h2>
-
-<div class="review-grid">
-
-<div class="review">
-⭐⭐⭐⭐⭐
-<p>Best party service around. Highly recommended!</p>
-<strong>– Sipho M.</strong>
-</div>
-
-<div class="review">
-⭐⭐⭐⭐⭐
-<p>Fast delivery and amazing prices.</p>
-<strong>– Lerato K.</strong>
-</div>
-
-<div class="review">
-⭐⭐⭐⭐⭐
-<p>Everything arrived on time for our event.</p>
-<strong>– Thabo D.</strong>
-</div>
-
-</div>
-
-</section>
-
-<!-- CONTACT -->
-
-<section class="section contact" id="contact">
-
-<h2 class="section-title">
-📞 Contact MyParty
-</h2>
-
-<p>📍 Johannesburg & Surrounding Areas</p>
-<p>📞 083 214 2201</p>
-<p>📧 thoentity@gmail.com</p>
-
-<a href="https://wa.me/27832142201" class="whatsapp-btn">
-💬 WhatsApp Us
-</a>
-
-</section>
-
-<footer>
-© 2025 MyParty | Celebrate More. Stress Less.
-</footer>
+  <div class="layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>🍾 Menu</h2>
+      <a href="#">Home</a>
+      <a href="#">Packages</a>
+      <a href="platter.html">Platters</a>
+      <a href="#">Gallery</a>
+      <a href="#">Reviews</a>
+      <a href="#">Contact</a>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main">
+
+      <section class="hero">
+        <h1>🎉 People’s Party Express</h1>
+        <p>
+          Everything you need for the perfect party — drinks, braai packs,
+          bubbly hire and more.
+        </p>
+        <a href="#" class="btn">Browse Party Packs</a>
+      </section>
+
+    </main>
+
+  </div>
 
 </body>
 </html>
