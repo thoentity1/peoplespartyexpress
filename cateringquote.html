@@ -6,65 +6,76 @@
 <title>MyParty Catering Quote</title>
 
 <style>
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial, sans-serif;
+    font-family:'Segoe UI',sans-serif;
 }
 
 body{
-    background:#f5f5f5;
+    background:#f5f6fa;
 }
 
 header{
     background:#fff;
-    padding:20px 50px;
+    padding:20px 40px;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
 }
 
 .logo{
-    font-size:28px;
-    font-weight:bold;
+    font-size:32px;
+    font-weight:700;
     color:#ff6600;
 }
 
-nav a{
-    text-decoration:none;
-    color:#333;
-    margin:0 15px;
-}
-
 .quote-btn{
-    background:#d62828;
-    color:white;
-    padding:12px 25px;
+    background:#c62828;
+    color:#fff;
     border:none;
+    padding:12px 25px;
     border-radius:5px;
     cursor:pointer;
 }
 
 .container{
-    max-width:1200px;
-    margin:40px auto;
+    max-width:1300px;
+    margin:30px auto;
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:25px;
+    padding:20px;
+}
+
+.main-form{
     background:white;
-    padding:40px;
+    padding:30px;
     border-radius:10px;
-    box-shadow:0 0 20px rgba(0,0,0,0.08);
+    box-shadow:0 0 20px rgba(0,0,0,.05);
+}
+
+.sidebar{
+    background:white;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 0 20px rgba(0,0,0,.05);
+    position:sticky;
+    top:20px;
+    height:fit-content;
 }
 
 h1{
     text-align:center;
     margin-bottom:10px;
-    font-size:48px;
 }
 
 .notice{
     text-align:center;
-    color:#d62828;
+    color:red;
     font-weight:bold;
     margin-bottom:30px;
 }
@@ -73,10 +84,12 @@ h1{
     display:grid;
     grid-template-columns:repeat(3,1fr);
     gap:20px;
-    margin-bottom:30px;
+    margin-bottom:25px;
 }
 
-input, textarea, select{
+input,
+textarea,
+select{
     width:100%;
     padding:12px;
     border:1px solid #ddd;
@@ -88,33 +101,51 @@ input, textarea, select{
 }
 
 .section h2{
-    margin-bottom:15px;
-    color:#222;
     border-bottom:2px solid #ff6600;
     padding-bottom:10px;
+    margin-bottom:15px;
 }
 
 .menu-item{
-    margin-bottom:12px;
+    margin-bottom:10px;
 }
 
 .menu-item label{
     cursor:pointer;
 }
 
+.menu-item input{
+    width:auto;
+    margin-right:8px;
+}
+
+.quote-summary h2{
+    margin-bottom:20px;
+}
+
+.quote-summary p{
+    margin-bottom:10px;
+}
+
+.total{
+    font-size:28px;
+    font-weight:bold;
+    color:#ff6600;
+}
+
+#selectedItems{
+    margin-top:15px;
+    padding-left:20px;
+}
+
 .submit-btn{
     background:#ff6600;
     color:white;
     border:none;
-    padding:15px 35px;
+    padding:15px 40px;
     font-size:18px;
     border-radius:6px;
     cursor:pointer;
-}
-
-.center{
-    text-align:center;
-    margin-top:30px;
 }
 
 .contact-grid{
@@ -123,247 +154,364 @@ input, textarea, select{
     gap:20px;
 }
 
-@media(max-width:768px){
-
-    .form-row,
-    .contact-grid{
-        grid-template-columns:1fr;
-    }
-
-    h1{
-        font-size:36px;
-    }
+.center{
+    text-align:center;
+    margin-top:30px;
 }
+
+@media(max-width:900px){
+
+.container{
+    grid-template-columns:1fr;
+}
+
+.form-row,
+.contact-grid{
+    grid-template-columns:1fr;
+}
+
+}
+
 </style>
 </head>
 <body>
 
 <header>
     <div class="logo">MyParty</div>
-
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="#">Packages</a>
-        <a href="#">Menu</a>
-        <a href="#">Gallery</a>
-        <a href="#">Contact</a>
-    </nav>
-
     <button class="quote-btn">GET INSTANT QUOTE</button>
 </header>
 
+<form>
+
 <div class="container">
 
-    <h1>Menu - Get a Quote Now</h1>
+<div class="main-form">
 
-    <div class="notice">
-        All prices are exclusive of VAT.
-    </div>
+<h1>Menu - Get a Quote Now</h1>
 
-    <div class="form-row">
-        <div>
-            <label>Amount of Adults *</label>
-            <input type="number">
-        </div>
+<div class="notice">
+All prices are exclusive of VAT
+</div>
 
-        <div>
-            <label>Children Under 10yrs (Half Price)</label>
-            <input type="number">
-        </div>
+<div class="form-row">
 
-        <div>
-            <label>Amount of People Attending</label>
-            <input type="number">
-        </div>
-    </div>
+<div>
+<label>Adults *</label>
+<input type="number" id="adults" min="0" value="0">
+</div>
 
-    <!-- STARTERS -->
-    <div class="section">
-        <h2>STARTERS</h2>
+<div>
+<label>Children Under 10 (Half Price)</label>
+<input type="number" id="children" min="0" value="0">
+</div>
 
-        <div class="menu-item">
-            <label>
-                <input type="checkbox">
-                Sticky BBQ Chicken Wings | R25.00
-            </label>
-        </div>
-
-        <div class="menu-item">
-            <label>
-                <input type="checkbox">
-                Peri-Peri Chicken Livers & Rolls | R35.00
-            </label>
-        </div>
-
-        <div class="menu-item">
-            <label>
-                <input type="checkbox">
-                Creamy Butternut Soup & Rolls | R35.00
-            </label>
-        </div>
-
-        <div class="menu-item">
-            <label>
-                <input type="checkbox">
-                Executive Starter | R95.00
-            </label>
-        </div>
-    </div>
-
-    <!-- MEATS -->
-    <div class="section">
-        <h2>MEATS (Select Minimum 2)</h2>
-
-        <div class="menu-item">
-            <label><input type="checkbox"> Lamb Best End Chops | R80.00</label>
-        </div>
-
-        <div class="menu-item">
-            <label><input type="checkbox"> Sirloin Steak 200g | R75.00</label>
-        </div>
-
-        <div class="menu-item">
-            <label><input type="checkbox"> Chicken Teriyaki Kababs | R65.00</label>
-        </div>
-
-        <div class="menu-item">
-            <label><input type="checkbox"> Magalies Boerewors 150g | R40.00</label>
-        </div>
-    </div>
-
-    <!-- STARCHES -->
-    <div class="section">
-        <h2>STARCHES</h2>
-
-        <div class="menu-item">
-            <label><input type="checkbox"> Baby Potatoes | R10.00</label>
-        </div>
-
-        <div class="menu-item">
-            <label><input type="checkbox"> Pap & Tomato Onion Gravy | R20.00</label>
-        </div>
-
-        <div class="menu-item">
-            <label><input type="checkbox"> Mushroom Potato Bake | R25.00</label>
-        </div>
-    </div>
-
-    <!-- VEGETABLES -->
-    <div class="section">
-        <h2>VEGETABLES</h2>
-
-        <div class="menu-item">
-            <label><input type="checkbox"> Traditional Chakalaka | R15.00</label>
-        </div>
-
-        <div class="menu-item">
-            <label><input type="checkbox"> Honey Roasted Butternut | R15.00</label>
-        </div>
-
-        <div class="menu-item">
-            <label><input type="checkbox"> Creamed Spinach with Feta | R30.00</label>
-        </div>
-    </div>
-
-    <!-- SALADS -->
-    <div class="section">
-        <h2>SALADS</h2>
-
-        <div class="menu-item">
-            <label><input type="checkbox"> Creamy Coleslaw | R15.00</label>
-        </div>
-
-        <div class="menu-item">
-            <label><input type="checkbox"> Rich Greek Salad | R25.00</label>
-        </div>
-
-        <div class="menu-item">
-            <label><input type="checkbox"> Tangy Potato Salad | R25.00</label>
-        </div>
-    </div>
-
-    <!-- DESSERTS -->
-    <div class="section">
-        <h2>DESSERTS</h2>
-
-        <div class="menu-item">
-            <label><input type="checkbox"> Malva Pudding & Custard | R35.00</label>
-        </div>
-
-        <div class="menu-item">
-            <label><input type="checkbox"> Peppermint Crisp Tart | R40.00</label>
-        </div>
-
-        <div class="menu-item">
-            <label><input type="checkbox"> Strawberry Cheesecake | R40.00</label>
-        </div>
-    </div>
-
-    <!-- EVENT DETAILS -->
-    <div class="section">
-        <h2>Event & Contact Details</h2>
-
-        <div class="contact-grid">
-
-            <div>
-                <label>Name & Surname *</label>
-                <input type="text">
-            </div>
-
-            <div>
-                <label>Email *</label>
-                <input type="email">
-            </div>
-
-            <div>
-                <label>Phone *</label>
-                <input type="text">
-            </div>
-
-            <div>
-                <label>Venue Address</label>
-                <input type="text">
-            </div>
-
-            <div>
-                <label>Date of Function</label>
-                <input type="date">
-            </div>
-
-            <div>
-                <label>Time To Eat</label>
-                <input type="time">
-            </div>
-
-        </div>
-
-        <br>
-
-        <label>Occasion</label>
-        <input type="text">
-
-        <br><br>
-
-        <label>Comments & Requests</label>
-        <textarea rows="5"></textarea>
-
-        <br><br>
-
-        <label>VAT Registered Vendor?</label>
-        <select>
-            <option>No</option>
-            <option>Yes</option>
-        </select>
-
-    </div>
-
-    <div class="center">
-        <button class="submit-btn">
-            GET QUOTE
-        </button>
-    </div>
+<div>
+<label>Total Guests</label>
+<input type="number" id="totalGuests" readonly>
+</div>
 
 </div>
+
+<!-- STARTERS -->
+
+<div class="section">
+<h2>STARTERS</h2>
+
+<div class="menu-item">
+<label><input type="checkbox" class="menu-option" data-price="25"> Sticky BBQ Chicken Wings (R25)</label>
+</div>
+
+<div class="menu-item">
+<label><input type="checkbox" class="menu-option" data-price="35"> Peri-Peri Chicken Livers & Rolls (R35)</label>
+</div>
+
+<div class="menu-item">
+<label><input type="checkbox" class="menu-option" data-price="40"> Teriyaki Chicken Pine Kebabs & Dip (R40)</label>
+</div>
+
+<div class="menu-item">
+<label><input type="checkbox" class="menu-option" data-price="95"> Executive Starter (R95)</label>
+</div>
+
+</div>
+
+<!-- MEATS -->
+
+<div class="section">
+<h2>MEATS</h2>
+
+<div class="menu-item">
+<label><input type="checkbox" class="menu-option" data-price="80"> Lamb Best End Chops (R80)</label>
+</div>
+
+<div class="menu-item">
+<label><input type="checkbox" class="menu-option" data-price="75"> Sirloin Steak 200g (R75)</label>
+</div>
+
+<div class="menu-item">
+<label><input type="checkbox" class="menu-option" data-price="65"> Chicken Teriyaki Kababs (R65)</label>
+</div>
+
+<div class="menu-item">
+<label><input type="checkbox" class="menu-option" data-price="40"> Boerewors 150g (R40)</label>
+</div>
+
+</div>
+
+<!-- STARCHES -->
+
+<div class="section">
+<h2>STARCHES</h2>
+
+<div class="menu-item">
+<label><input type="checkbox" class="menu-option" data-price="10"> Baby Potatoes (R10)</label>
+</div>
+
+<div class="menu-item">
+<label><input type="checkbox" class="menu-option" data-price="20"> Pap & Tomato Onion Gravy (R20)</label>
+</div>
+
+<div class="menu-item">
+<label><input type="checkbox" class="menu-option" data-price="25"> Potato Bake (R25)</label>
+</div>
+
+</div>
+
+<!-- VEGETABLES -->
+
+<div class="section">
+<h2>VEGETABLES</h2>
+
+<div class="menu-item">
+<label><input type="checkbox" class="menu-option" data-price="15"> Traditional Chakalaka (R15)</label>
+</div>
+
+<div class="menu-item">
+<label><input type="checkbox" class="menu-option" data-price="15"> Honey Roasted Butternut (R15)</label>
+</div>
+
+<div class="menu-item">
+<label><input type="checkbox" class="menu-option" data-price="30"> Creamed Spinach & Feta (R30)</label>
+</div>
+
+</div>
+
+<!-- SALADS -->
+
+<div class="section">
+<h2>SALADS</h2>
+
+<div class="menu-item">
+<label><input type="checkbox" class="menu-option" data-price="15"> Creamy Coleslaw (R15)</label>
+</div>
+
+<div class="menu-item">
+<label><input type="checkbox" class="menu-option" data-price="25"> Rich Greek Salad (R25)</label>
+</div>
+
+<div class="menu-item">
+<label><input type="checkbox" class="menu-option" data-price="25"> Potato Salad (R25)</label>
+</div>
+
+</div>
+
+<!-- DESSERTS -->
+
+<div class="section">
+<h2>DESSERTS</h2>
+
+<div class="menu-item">
+<label><input type="checkbox" class="menu-option" data-price="35"> Malva Pudding (R35)</label>
+</div>
+
+<div class="menu-item">
+<label><input type="checkbox" class="menu-option" data-price="40"> Peppermint Crisp Tart (R40)</label>
+</div>
+
+<div class="menu-item">
+<label><input type="checkbox" class="menu-option" data-price="40"> Strawberry Cheesecake (R40)</label>
+</div>
+
+</div>
+
+<!-- CONTACT -->
+
+<div class="section">
+<h2>Event & Contact Details</h2>
+
+<div class="contact-grid">
+
+<div>
+<label>Name</label>
+<input type="text">
+</div>
+
+<div>
+<label>Email</label>
+<input type="email">
+</div>
+
+<div>
+<label>Phone</label>
+<input type="text">
+</div>
+
+<div>
+<label>Venue Address</label>
+<input type="text">
+</div>
+
+<div>
+<label>Date</label>
+<input type="date">
+</div>
+
+<div>
+<label>Time</label>
+<input type="time">
+</div>
+
+</div>
+
+<br>
+
+<label>Occasion</label>
+<input type="text">
+
+<br><br>
+
+<label>Comments</label>
+<textarea rows="4"></textarea>
+
+</div>
+
+<div class="center">
+<button class="submit-btn" type="submit">
+REQUEST QUOTE
+</button>
+</div>
+
+</div>
+
+<!-- SIDEBAR -->
+
+<div class="sidebar">
+
+<div class="quote-summary">
+
+<h2>Quote Summary</h2>
+
+<p>Adults: <strong id="adultCount">0</strong></p>
+<p>Children: <strong id="childCount">0</strong></p>
+
+<hr><br>
+
+<p>Subtotal: R <span id="subtotal">0.00</span></p>
+
+<p>VAT (15%): R <span id="vat">0.00</span></p>
+
+<hr><br>
+
+<p class="total">
+R <span id="total">0.00</span>
+</p>
+
+<h3 style="margin-top:20px;">Selected Items</h3>
+
+<ul id="selectedItems"></ul>
+
+</div>
+
+</div>
+
+</div>
+
+</form>
+
+<script>
+
+const adultsInput = document.getElementById('adults');
+const childrenInput = document.getElementById('children');
+
+const menuOptions =
+document.querySelectorAll('.menu-option');
+
+function calculateQuote(){
+
+    const adults =
+    parseInt(adultsInput.value) || 0;
+
+    const children =
+    parseInt(childrenInput.value) || 0;
+
+    document.getElementById('adultCount')
+    .textContent = adults;
+
+    document.getElementById('childCount')
+    .textContent = children;
+
+    document.getElementById('totalGuests')
+    .value = adults + children;
+
+    let perPersonPrice = 0;
+
+    const selectedList =
+    document.getElementById('selectedItems');
+
+    selectedList.innerHTML = '';
+
+    menuOptions.forEach(option=>{
+
+        if(option.checked){
+
+            perPersonPrice +=
+            Number(option.dataset.price);
+
+            let li =
+            document.createElement('li');
+
+            li.textContent =
+            option.parentElement.innerText;
+
+            selectedList.appendChild(li);
+        }
+    });
+
+    const adultCost =
+    adults * perPersonPrice;
+
+    const childCost =
+    children * (perPersonPrice * 0.5);
+
+    const subtotal =
+    adultCost + childCost;
+
+    const vat =
+    subtotal * 0.15;
+
+    const total =
+    subtotal + vat;
+
+    document.getElementById('subtotal')
+    .textContent = subtotal.toFixed(2);
+
+    document.getElementById('vat')
+    .textContent = vat.toFixed(2);
+
+    document.getElementById('total')
+    .textContent = total.toFixed(2);
+}
+
+adultsInput.addEventListener('input',calculateQuote);
+childrenInput.addEventListener('input',calculateQuote);
+
+menuOptions.forEach(item=>{
+    item.addEventListener('change',calculateQuote);
+});
+
+calculateQuote();
+
+</script>
 
 </body>
 </html>
