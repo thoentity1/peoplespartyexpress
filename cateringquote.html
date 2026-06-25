@@ -458,22 +458,42 @@ function calculateQuote(){
     const selectedList =
     document.getElementById('selectedItems');
 
-    selectedList.innerHTML = '';
+   selectedList.innerHTML = '';
 
-    menuOptions.forEach(option=>{
+menuOptions.forEach(option => {
 
-        if(option.checked){
+    if(option.checked){
 
-            perPersonPrice +=
-            Number(option.dataset.price);
+        perPersonPrice += Number(option.dataset.price);
 
-            let li =
-            document.createElement('li');
+        const row = document.createElement('div');
+        row.className = 'selected-item';
 
-            li.textContent =
-            option.parentElement.innerText;
+        const name = document.createElement('span');
+        name.textContent =
+        option.parentElement.textContent.trim();
 
-            selectedList.appendChild(li);
+        const removeBtn =
+        document.createElement('button');
+
+        removeBtn.className = 'remove-item';
+        removeBtn.type = 'button';
+        removeBtn.textContent = '✖';
+
+        removeBtn.onclick = function(){
+
+            option.checked = false;
+            calculateQuote();
+
+        };
+
+        row.appendChild(name);
+        row.appendChild(removeBtn);
+
+        selectedList.appendChild(row);
+    }
+
+});;
         }
     });
 
